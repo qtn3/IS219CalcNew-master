@@ -1,4 +1,5 @@
 const Calculator = require('../src/Calculator');
+const Squareroot = require('../src/Operations/Squareroot');
 
 test('Calculator adding two numbers', () => {
     //assigning the results of the calc sum method to an object, calculator returns an object
@@ -24,12 +25,18 @@ test('Calculator quotient of two numbers', () => {
     //expect is used to test if the results are correct
     expect(result).toBe(.5);
 });
-test('Calculator adding to calculations', () => {
+test('Calculator square root of a number', () => {
     //assigning the results of the calc sum method to an object, calculator returns an object
-    let result = Calculator.Quotient(1,2);
-    let calculations = Calculator.Calculations
-    calculations.forEach(function (calc) {
-       console.log(calc.GetResults())
-    });
+    let result = Squareroot(4);
+    //expect is used to test if the results are correct
+    expect(result).toBe(2);
 });
+test('Calculator square of a number', () => {
+    //assigning the results of the calc sum method to an object, calculator returns an object
+    let result = Calculator.Square(4, 2);
+    //expect is used to test if the results are correct
+    expect(result).toBe(16);
+});
+
+
 

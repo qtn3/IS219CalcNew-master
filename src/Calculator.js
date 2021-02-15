@@ -3,6 +3,8 @@ const Sum = require('./Operations/Sum');
 const Difference = require('./Operations/Difference');
 const Product = require('./Operations/Product');
 const Quotient = require('./Operations/Quotient');
+const Squareroot = require('./Operations/Squareroot');
+const Square = require('./Operations/Square');
 
 class Calculator {
     static Calculations = []
@@ -28,6 +30,18 @@ class Calculator {
     static Quotient(a,b) {
         //this is how you create a new object and this is good for data and actions
         let calculation = new Calculation(a,b,Quotient);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static Squareroot(a) {
+        //this is how you create a new object and this is good for data and actions
+        let calculation = new Calculation(a,Squareroot);
+        Calculator.Calculations.push(calculation);
+        return calculation.GetResults();
+    }
+    static Square(a, b) {
+        //this is how you create a new object and this is good for data and actions
+        let calculation = new Calculation(a,b,Square);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
